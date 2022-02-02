@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  img {
+    width: 100%;
+    vertical-align: bottom;
+  }
+  
+  .head {
+    width: 100%;
+    height: 70px;
+    background-color: black;
+    display: flex;
+  }
+  
+  .name {
+    align-items: center;
+    color: rgb(255, 255, 255);
+    margin-left: 20px;
+    margin-top: 22px;
+  }
