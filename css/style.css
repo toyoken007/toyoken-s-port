@@ -27,7 +27,7 @@ img {
 }
 
 ul.nav {
-  color: rgb(255, 255, 255);
+  color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -40,10 +40,50 @@ ul.nav {
 ul.nav li {
   list-style: none;
 }
+
 .name {
-  align-items: center;
-  color: rgb(255, 255, 255);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
   margin-left: 20px;
   margin-top: 22px;
 }
 
+.gazou {
+  position: relative;
+  width: 1150px;
+  margin: 75px auto 0;
+}
+.gazou .kousui {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 80%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.gazou .kousui .abc {
+  width: 150px;
+  text-align: center;
+}
+.gazou .kousui .edf {
+  width: 200px;
+  text-align: center;
+}
+.gazou .kousui h2 {
+  color: white;
+}
+
+.kousui_comment {
+  color: black;
+}
