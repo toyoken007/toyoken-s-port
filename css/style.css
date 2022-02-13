@@ -87,3 +87,63 @@ ul.nav li {
 .kousui_comment {
   color: black;
 }
+
+.concept {
+  font-weight: bold;
+  margin-top: 105px;
+  font-size: 30px;
+  text-align: center;
+  color: rgb(55, 59, 58);
+}
+
+.profile {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  font-weight: bolder;
+  text-decoration:underline;
+  color: rgb(55, 59, 58);
+}
+
+.icon_comment {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 75%;
+}
+
+.icon {
+  width: 400px;
+}
+
+.icon img {
+  width: 300px;
+}
+
+.icon_text_werp {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  
+}
+
+.icon_text {
+  margin-top: 25px;
+  text-align: center;
+  margin-left: 0;
+  vertical-align:top;
+  line-height: 2;
+}
+
+.profile_text {
+  font-size: 25px;
+}
+
+.profile_message {
+  margin: 30px;
+  text-decoration:underline;
+  text-align: left;
+  text-decoration: #333 underline;
+  line-height: 2;
+}
