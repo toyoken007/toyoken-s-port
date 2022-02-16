@@ -147,3 +147,48 @@ ul.nav li {
   text-decoration: #333 underline;
   line-height: 2;
 }
+
+.service {
+  margin-top: 68px;
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  font-weight: bolder;
+  text-decoration:underline;
+  color: rgb(55, 59, 58);
+}
+
+.service_list {
+  display: flex;
+  justify-content: space-between;
+  width: 1080px;
+  margin: 0 auto;
+}
+
+.service_werp {
+  width: 30%;
+  margin-top: 35px;
+}
+
+.service_menu {
+  text-align: center;
+}
+
+.service_menu p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.service_img {
+  width: 75px;
+  margin: 30px auto;
+}
+
+.service_comment {
+  margin-bottom: 30px;
+}
+
+.service_comment p {
+  font-size: 14px;
+  line-height: 2;
+}
