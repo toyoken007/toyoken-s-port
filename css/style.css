@@ -192,3 +192,51 @@ ul.nav li {
   font-size: 14px;
   line-height: 2;
 }
+
+.work {
+  margin-top: 68px;
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  font-weight: bolder;
+  text-decoration:underline;
+  color: rgb(55, 59, 58);
+  margin-top: 57px;
+  margin-bottom: 45px;
+}
+
+.work_list {
+  display: flex;
+  justify-content: space-between;
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.work_werp {
+  width: 30%;
+}
+
+.work_menu {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.work_menu p {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.work_img {
+  width: 200px;
+  margin: 0 auto;
+}
+
+.work_comment {
+  margin-top: 10px;
+  text-align: center;
+  line-height: 2;
+}
+
+.work_comment p {
+  font-size: 15px;
+}
