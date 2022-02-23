@@ -240,3 +240,42 @@ ul.nav li {
 .work_comment p {
   font-size: 15px;
 }
+
+.contact {
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  font-weight: bolder;
+  text-decoration:underline;
+  color: rgb(55, 59, 58);
+  margin-top: 100px;
+  margin-bottom: 35px;
+}
+
+.contact_wrap {
+  text-align: center;
+  margin-bottom: 37px;
+}
+
+label {
+  font-size: 25px;
+}
+
+.txt {
+  width: 780px;
+  line-height: 40px;
+  font-size: 25px;
+  padding: 5px;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 0.2em;
+} 
+
+
+textarea {
+  width: 780px;
+  height: 150px;
+  font-size: 25px;
+  padding: 5px;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 0.2em;
+}
