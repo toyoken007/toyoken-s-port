@@ -279,3 +279,35 @@ textarea {
   border: 2px solid rgb(0, 0, 0);
   border-radius: 0.2em;
 }
+
+.soushin {
+  text-align: center;
+}
+
+.soushin input {
+  margin-top: 10px;
+  width: 700px;
+  height: 67px;
+  font-size: 25px;
+  border-radius: 0.8em;
+  font-size: 20px;
+  font-weight: bold;
+  color: aliceblue;
+  background-color: rgb(94, 94, 94);
+}
+
+hr {
+  width: 100%;
+  margin-top: 50px;
+}
+
+footer {
+  display: flex;
+	align-items: center;
+  height: 50px;
+  justify-content: center;
+}
+
+/* .footer p {
+  text-align: center;
+} */
