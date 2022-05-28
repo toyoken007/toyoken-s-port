@@ -211,11 +211,10 @@
             <hr>
     
             <footer>
-                <p>&copy; 2020/makoto/All Right Reserved</p>
+                <p>&copy; 2022-toyoken</p>
             </footer>
        </form>
 
        
 </body>
-
 </html>
