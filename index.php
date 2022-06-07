@@ -1,3 +1,56 @@
+<?php 
+session_start();
+$post = [
+  'name'  => '',
+  'email' => '',
+  'contents' => '',
+  'message' => ''
+];
+
+$error = [];
+
+/* htmlspecialcharsを短くする */
+function h($value) {
+  return htmlspecialchars($value, ENT_QUOTES);
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $post['name'] = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+  if ($post['name'] === '') {
+      $error['name'] = 'blank';
+  }
+  
+  $post['email'] = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+  if ($post['email'] === '') {
+      $error['email'] = 'blank';
+  } else if (!filter_var($post['email'], FILTER_VALIDATE_EMAIL)) {
+    $error['email'] = 'email';
+  }
+
+  $post['contents'] = filter_input(INPUT_POST, 'contents');
+  if ($post['contents'] === '') {
+    $error['contents'] = 'blank';
+  }
+
+  $post['message'] = filter_input(INPUT_POST, 'message');
+  if ($post['message'] === '') {
+    $error['message'] = 'blank';
+  }
+
+  if (count($error) === 0) {
+    $_SESSION['form'] = $post;
+    header('Location: check.php');
+    exit();
+  }
+} else {
+    if (isset($_SESSION['form'])) {
+      $post = $_SESSION['form'];
+    }
+}
+  
+?>
+
+
 <!DOCTYPE html>
 <html lang="jp">
 
@@ -24,6 +77,22 @@
                 <li>CONTACT</li>
             </ul>
         </div>
+        <div class="hamburger-menu">
+          <input type="checkbox" id="menu-btn-check">
+          <label class="menu-btn" for="menu-btn-check"><span></span></label>
+          <div class="menu-content">
+            <ul class="menu_nav_sp">
+              <li><a href="#profile">PROFILE</a>
+              </li>
+              <li><a href="#service">SERVICE</a>
+              </li>
+              <li><a href="#work">WORKS</a>
+              </li>
+              <li><a href="#contact">CONTACT</a>
+              </li>
+            </ul>
+          </div>
+        </div>
     </header>
 
     <div class="gazou">
@@ -46,7 +115,7 @@
         <p>あなたの「つくりたい」を「かたち」に</p>
     </div>
 
-    <div class="profile">
+    <div class="profile" id="profile">
         <p>PROFILE</p>
     </div>
 
@@ -70,7 +139,7 @@
         </div>
     </div>
 
-    <div class="service">
+    <div class="service" id="service">
         <p>SERVICE</p>
     </div>
 
@@ -113,7 +182,7 @@
         </div>
     </div>
 
-    <div class="work">
+    <div class="work" id="work">
         <p>WORK</p>
     </div>
 
@@ -171,19 +240,26 @@
         </div>
     </div>
 
-    <div class="contact">
+    <div class="contact" id="contact">
         <p>CONTACT</p>
        </div>
  
        <form action="" method="post">
            <div class="contact_wrap">
-               <label for="name">名前</label><br>
-               <input type="text" class="txt" name="name" placeholder="Your Name">
+                <label for="name">名前</label><br>
+                <input type="text" class="txt" name="name" placeholder="Your Name">
+                <?php if (isset($error['name']) && $error['name'] === 'blank'): ?>
+                    <p class="error">*お名前を入力してください</p>
+                <?php endif; ?>
+                
            </div>
  
            <div class="contact_wrap">
-               <label for="email">メールアドレス</label><br>
-               <input type="text" class="txt" name="email" placeholder="Your Email">
+                <label for="email">メールアドレス</label><br>
+                <input type="text" class="txt" name="email" placeholder="Your Email">
+                <?php if (isset($error['name']) && $error['name'] === 'blank'): ?>
+                      <p class="error">*メールアドレスを入力して下さい</p>
+                <?php endif; ?>
            </div>
  
            <div class="contact_wrap">
@@ -197,11 +273,17 @@
                    <option value="お問い合わせ">・お問い合わせ</option>
                    <option value="その他">・その他</option>
                </select>
+                <?php if (isset($error['name']) && $error['name'] === 'blank'): ?>
+                      <p class="error">*お問い合わせ内容を選んでください</p>
+                <?php endif; ?>
            </div>
  
            <div class="contact_wrap">
                <label for="message">お問い合わせ</label><br>
                <textarea id="message" name="message" placeholder="Your Message..."></textarea>
+                <?php if (isset($error['name']) && $error['name'] === 'blank'): ?>
+                      <p class="error">*お問い合わせ内容をご記入ください</p>
+                <?php endif; ?>
            </div>
 
             <div class="soushin">
@@ -211,10 +293,11 @@
             <hr>
     
             <footer>
-                <p>&copy; 2022-toyoken</p>
+                <p>&copy; 2022/TOYOKEN</p>
             </footer>
        </form>
 
        
 </body>
+
 </html>

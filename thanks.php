@@ -1,3 +1,11 @@
+<?php 
+$referer = $_SERVER['HTTP_REFERER']; //アクセス元ページ（ユーザー側）
+$url = "check.php"; //運営が指定しているアクセス元ページ
+if(!strstr($referer,$url)){
+header("Location: index.php");
+exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
