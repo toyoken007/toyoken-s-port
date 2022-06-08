@@ -189,26 +189,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="work_list">
         <div class="work_werp">
             <div class="work_menu">
-                <p>LPサイト</p>
+                <p>ポートフォリオ</p>
             </div>
             <div class="work_img">
-                <img src="image/lpsite1.png" alt="LPサイト1画像">
+                <img src="image/team_port.png" alt="LPサイト1画像">
             </div>
             <div class="work_comment">
-                <p>月詠歌(copy)</p>
+                <p>Invincible Hair TOYO</p>
                 <p>制作期間:7日</p>
             </div>
         </div>
 
         <div class="work_werp">
             <div class="work_menu">
-                <p>LPサイト</p>
+                <p>ポートフォリオ</p>
             </div>
             <div class="work_img">
-                <img src="image/lpsite2.png" alt="LPサイト2画像">
+                <img src="image/takuya_port.png" alt="LPサイト2画像">
             </div>
             <div class="work_comment">
-                <p>HAKUICHI(copy)</p>
+                <p>KIKUTA PORTFORIO</p>
                 <p>制作期間:4日</p>
             </div>
         </div>
@@ -221,20 +221,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <img src="image/port.png" alt="ポートフォリオ画像">
             </div>
             <div class="work_comment">
-                <p>ISARA(copy)</p>
+                <p>TOYOKEN PORTFOLIO</p>
                 <p>制作期間:7日</p>
             </div>
         </div>
 
         <div class="work_werp">
             <div class="work_menu">
-                <p>個人ブログ</p>
+                <p>ポートフォリオ</p>
             </div>
             <div class="work_img">
-                <img src="image/blog.png" alt="ブログ画像">
+                <img src="image/fukuyama_web.png" alt="ブログ画像">
             </div>
             <div class="work_comment">
-                <p>NANA (copy)</p>
+                <p>まるふく</p>
                 <p>制作期間:7日</p>
             </div>
         </div>
