@@ -1,53 +1,54 @@
-<?php 
+<?php
 session_start();
 $post = [
-  'name'  => '',
-  'email' => '',
-  'contents' => '',
-  'message' => ''
+    'name'  => '',
+    'email' => '',
+    'contents' => '',
+    'message' => ''
 ];
 
 $error = [];
 
 /* htmlspecialcharsを短くする */
-function h($value) {
-  return htmlspecialchars($value, ENT_QUOTES);
+function h($value)
+{
+    return htmlspecialchars($value, ENT_QUOTES);
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $post['name'] = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
-  if ($post['name'] === '') {
-      $error['name'] = 'blank';
-  }
-  
-  $post['email'] = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-  if ($post['email'] === '') {
-      $error['email'] = 'blank';
-  } else if (!filter_var($post['email'], FILTER_VALIDATE_EMAIL)) {
-    $error['email'] = 'email';
-  }
+    $post['name'] = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+    if ($post['name'] === '') {
+        $error['name'] = 'blank';
+    }
 
-  $post['contents'] = filter_input(INPUT_POST, 'contents');
-  if ($post['contents'] === '') {
-    $error['contents'] = 'blank';
-  }
+    $post['email'] = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+    if ($post['email'] === '') {
+        $error['email'] = 'blank';
+    } else if (!filter_var($post['email'], FILTER_VALIDATE_EMAIL)) {
+        $error['email'] = 'email';
+    }
 
-  $post['message'] = filter_input(INPUT_POST, 'message');
-  if ($post['message'] === '') {
-    $error['message'] = 'blank';
-  }
+    $post['contents'] = filter_input(INPUT_POST, 'contents');
+    if ($post['contents'] === '') {
+        $error['contents'] = 'blank';
+    }
 
-  if (count($error) === 0) {
-    $_SESSION['form'] = $post;
-    header('Location: check.php');
-    exit();
-  }
+    $post['message'] = filter_input(INPUT_POST, 'message');
+    if ($post['message'] === '') {
+        $error['message'] = 'blank';
+    }
+
+    if (count($error) === 0) {
+        $_SESSION['form'] = $post;
+        header('Location: check.php');
+        exit();
+    }
 } else {
     if (isset($_SESSION['form'])) {
-      $post = $_SESSION['form'];
+        $post = $_SESSION['form'];
     }
 }
-  
+
 ?>
 
 
@@ -59,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Toyoken's PORTFOLIO</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/top/style.css">
 </head>
 
 <body>
@@ -78,20 +79,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </ul>
         </div>
         <div class="hamburger-menu">
-          <input type="checkbox" id="menu-btn-check">
-          <label class="menu-btn" for="menu-btn-check"><span></span></label>
-          <div class="menu-content">
-            <ul class="menu_nav_sp">
-              <li><a href="#profile">PROFILE</a>
-              </li>
-              <li><a href="#service">SERVICE</a>
-              </li>
-              <li><a href="#work">WORKS</a>
-              </li>
-              <li><a href="#contact">CONTACT</a>
-              </li>
-            </ul>
-          </div>
+            <input type="checkbox" id="menu-btn-check">
+            <label class="menu-btn" for="menu-btn-check"><span></span></label>
+            <div class="menu-content">
+                <ul class="menu_nav_sp">
+                    <li><a href="#profile">PROFILE</a>
+                    </li>
+                    <li><a href="#service">SERVICE</a>
+                    </li>
+                    <li><a href="#work">WORKS</a>
+                    </li>
+                    <li><a href="#contact">CONTACT</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </header>
 
@@ -242,62 +243,62 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <div class="contact" id="contact">
         <p>CONTACT</p>
-       </div>
- 
-       <form action="" method="post">
-           <div class="contact_wrap">
-                <label for="name">名前</label><br>
-                <input type="text" class="txt" name="name" placeholder="Your Name">
-                <?php if (isset($error['name']) && $error['name'] === 'blank'): ?>
-                    <p class="error">*お名前を入力してください</p>
-                <?php endif; ?>
-                
-           </div>
- 
-           <div class="contact_wrap">
-                <label for="email">メールアドレス</label><br>
-                <input type="text" class="txt" name="email" placeholder="Your Email">
-                <?php if (isset($error['name']) && $error['name'] === 'blank'): ?>
-                      <p class="error">*メールアドレスを入力して下さい</p>
-                <?php endif; ?>
-           </div>
- 
-           <div class="contact_wrap">
-               <label for="contents">お問い合わせ内容</label><br>
-               <select id="contents" name="contents" class="txt">
-                   <option value="">Please Select...</option>
-                   <option value="web制作依頼">・web制作依頼</option>
-                   <option value="wordplessでのブログ開設">・wordplessでのブログ開設</option>
-                   <option value="wordplessテーマ制作">・wordplessテーマ制作</option>
-                   <option value="コーポレートサイト制作">・コーポレートサイト制作</option>
-                   <option value="お問い合わせ">・お問い合わせ</option>
-                   <option value="その他">・その他</option>
-               </select>
-                <?php if (isset($error['name']) && $error['name'] === 'blank'): ?>
-                      <p class="error">*お問い合わせ内容を選んでください</p>
-                <?php endif; ?>
-           </div>
- 
-           <div class="contact_wrap">
-               <label for="message">お問い合わせ</label><br>
-               <textarea id="message" name="message" placeholder="Your Message..."></textarea>
-                <?php if (isset($error['name']) && $error['name'] === 'blank'): ?>
-                      <p class="error">*お問い合わせ内容をご記入ください</p>
-                <?php endif; ?>
-           </div>
+    </div>
 
-            <div class="soushin">
+    <form action="" method="post">
+        <div class="contact_wrap">
+            <label for="name">名前</label><br>
+            <input type="text" class="txt" name="name" placeholder="Your Name">
+            <?php if (isset($error['name']) && $error['name'] === 'blank') : ?>
+                <p class="error">*お名前を入力してください</p>
+            <?php endif; ?>
+
+        </div>
+
+        <div class="contact_wrap">
+            <label for="email">メールアドレス</label><br>
+            <input type="text" class="txt" name="email" placeholder="Your Email">
+            <?php if (isset($error['name']) && $error['name'] === 'blank') : ?>
+                <p class="error">*メールアドレスを入力して下さい</p>
+            <?php endif; ?>
+        </div>
+
+        <div class="contact_wrap">
+            <label for="contents">お問い合わせ内容</label><br>
+            <select id="contents" name="contents" class="txt">
+                <option value="">Please Select...</option>
+                <option value="web制作依頼">・web制作依頼</option>
+                <option value="wordplessでのブログ開設">・wordplessでのブログ開設</option>
+                <option value="wordplessテーマ制作">・wordplessテーマ制作</option>
+                <option value="コーポレートサイト制作">・コーポレートサイト制作</option>
+                <option value="お問い合わせ">・お問い合わせ</option>
+                <option value="その他">・その他</option>
+            </select>
+            <?php if (isset($error['name']) && $error['name'] === 'blank') : ?>
+                <p class="error">*お問い合わせ内容を選んでください</p>
+            <?php endif; ?>
+        </div>
+
+        <div class="contact_wrap">
+            <label for="message">お問い合わせ</label><br>
+            <textarea id="message" name="message" placeholder="Your Message..."></textarea>
+            <?php if (isset($error['name']) && $error['name'] === 'blank') : ?>
+                <p class="error">*お問い合わせ内容をご記入ください</p>
+            <?php endif; ?>
+        </div>
+
+        <div class="soushin">
             <input type="submit" value="送信">
-            </div>
-    
-            <hr>
-    
-            <footer>
-                <p>&copy; 2022/TOYOKEN</p>
-            </footer>
-       </form>
+        </div>
 
-       
+        <hr>
+
+        <footer>
+            <p>&copy; 2022/TOYOKEN</p>
+        </footer>
+    </form>
+
+
 </body>
 
 </html>

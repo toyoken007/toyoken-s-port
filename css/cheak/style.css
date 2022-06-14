@@ -1,0 +1,142 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.12,
+* Autoprefixer: v10.4.4
+* Browsers: last 4 version
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  vertical-align: bottom;
+}
+
+.header {
+  width: 100%;
+  height: 70px;
+  background-color: rgb(0, 0, 0);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: center;
+  align-items: center;
+}
+
+.kakunin {
+  color: #ffffff;
+}
+
+.content {
+  background-color: #eeeeee;
+  margin: 100px auto;
+  width: 85%;
+  padding: 30px;
+}
+
+.content h2 {
+  text-align: center;
+}
+
+.form_kakunin {
+  width: 800px;
+  margin: 50px auto 0;
+}
+
+.form_kakunin th {
+  text-align: right;
+  padding: 10px;
+  font-size: 20px;
+  width: 200px;
+  vertical-align: top;
+}
+
+.form_kakunin td {
+  padding: 10px;
+}
+
+.botan {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.back {
+  margin-right: 30px;
+  margin-top: 10px;
+}
+
+.back button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 67px;
+  border-radius: 0.8em;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: rgb(94, 94, 94);
+  border-radius: 0.8em;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  border: 2px solid;
+  border-color: rgb(3, 3, 3);
+}
+
+input {
+  margin-top: 10px;
+  width: 300px;
+  height: 67px;
+  border-radius: 0.8em;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: rgb(94, 94, 94);
+  color: rgb(255, 255, 255);
+  border: 2px solid;
+  border-color: rgb(3, 3, 3);
+}
+/*
+レスポンシブ
+*/
+
+
+@media screen and (max-width: 767px) {
+  h2 {
+    font-size: 10px;
+  }
+  
+  .form_kakunin {
+    width: 100%;
+  }
+  .form_kakunin th {
+    width: 110px;
+  }
+
+  th p  {
+    font-size: 10px;
+  }
+
+  tr {
+    font-size: 10px;
+  }
+
+  .button {
+    width: 100%;
+  }
+  .back button {
+    width: 80px;
+    height: 45px;
+  }
+
+  input {
+    width: 80px;
+    height: 45px;
+  }
+}
